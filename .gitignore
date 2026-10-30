@@ -1,0 +1,23 @@
+# Secrets and environment variables
+.env
+.env.*
+!.env.example
+**/application-local.yml
+**/application-local.yaml
+# Java / Spring Boot
+**/target/
+**/build/
+**/.gradle/
+# Frontend
+**/node_modules/
+**/dist/
+# IDE files
+.idea/
+.metadata/
+.vscode/
+*.iml
+# Logs
+*.log
+# OS files
+.DS_Store
+Thumbs.db

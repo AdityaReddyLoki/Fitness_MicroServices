@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: api-Gateway
+
+  cloud:
+    gateway:
+      server:
+        webflux:
+          globalcors:
+            add-to-simple-url-handler-mapping: true
+            cors-configurations:
+              '[/**]':
+                allowedOrigins:
+                  - "http://localhost:5173"
+                allowedMethods:
+                  - GET
+                  - POST
+                  - PUT
+                  - DELETE
+                  - OPTIONS
+                allowedHeaders:
+                  - "*"
+                allowCredentials: true
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8181/realms/fitness-oauth2
+          jwk-set-uri: http://localhost:8181/realms/fitness-oauth2/protocol/openid-connect/certs
+
+  config:
+    import: optional:configserver:http://localhost:8888

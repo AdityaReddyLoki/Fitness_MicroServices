@@ -1,0 +1,30 @@
+package com.Fitness.activityService.dto;
+
+import com.Fitness.activityService.model.ActivityType;
+import lombok.Data;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.mongodb.core.mapping.Field;
+
+import java.time.LocalDateTime;
+import java.util.Map;
+@Data
+public class ActivityResponse {
+
+    private String id;
+    private String userId;
+    private ActivityType type;
+    private Integer duration;
+    private Integer caloriesBurned;
+    private LocalDateTime startTime;
+
+
+    private Map<String,Object> additionalMetrics;
+
+     //this is from the springFramwork "And user have  it from jpa"
+    private LocalDateTime createdAt;
+
+    private LocalDateTime updateAt;
+
+}
